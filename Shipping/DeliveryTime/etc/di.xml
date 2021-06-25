@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="checkout_additional_shipping_fields" type="Shipping\DeliveryTime\Plugin\Checkout\ExtraLayoutPlugin" sortOrder="100" />
+    </type>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save_quote_table" type="Shipping\DeliveryTime\Plugin\Quote\SaveQuotePlugin" sortOrder="10" />
+    </type>
+
+     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <plugin name="sales_order_custom_columns" type="Shipping\DeliveryTime\Plugin\Column\SalesOrderColoumnPlugin" sortOrder="10" disabled="false" />
+    </type>
+</config>
