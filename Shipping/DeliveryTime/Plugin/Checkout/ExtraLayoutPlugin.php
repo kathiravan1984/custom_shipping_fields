@@ -41,11 +41,13 @@ class ExtraLayoutPlugin
             'options' => [],
             'filterBy' => null,
             'customEntry' => null,
-            'visible' => true
- 
+            'visible' => true,
+
         ];
 
         $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children']['delivery_time'] = $extraField;
+        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']
+        ['children']['shippingAddress']['children']['shipping-address-fieldset']['children']['delivery_time']['sortOrder'] = 150;
 
         return $jsLayout;
     }
